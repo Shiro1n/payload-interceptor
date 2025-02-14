@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Form Payload Interceptor",
+  "version": "1.0",
+  "description": "Intercepts form submissions and displays payload data.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Click to View Captured Payload"
+  }
+}
